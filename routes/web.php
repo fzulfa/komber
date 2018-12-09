@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', 'DashboardController@index');
+
+Route::get('/api', 'ApiController@pothole');
+Route::get('/read', 'ApiController@sensor');

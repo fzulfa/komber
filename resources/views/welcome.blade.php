@@ -81,16 +81,19 @@
                 <tr>
                   <th>No</th>
                   <th>Status</th>
-                  <th>Location</th>
+                  <th>latitude</th>
+                  <th>longitude</th>
                 </tr>
                 </thead>
                 <tbody>
+                  @foreach ($datas as $data)
                 <tr>
-                  <td>1</td>
-                  <td>LB
-                  </td>
-                  <td>83420348923</td>
+                  <td>{{$data->id}}</td>
+                  <td>{{$data->status}}</td>
+                  <td>{{$data->lat}}</td>
+                  <td>{{$data->lng}}</td>
                 </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>
