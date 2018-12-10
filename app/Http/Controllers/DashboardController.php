@@ -10,6 +10,16 @@ class DashboardController extends Controller
 {
     public function index(){
     	$datas = Pothole::all();
-    	return view('welcome',['datas'=>$datas]);
+    	return view('index',['datas'=>$datas]);
+    }
+    public function sensor(){
+    	$datas = Sensor::all();
+
+    	return view('sensor',['datas'=>$datas]);
+    }
+    public function chart(){
+    	$datas = Sensor::all();
+
+    	return $datas;
     }
 }

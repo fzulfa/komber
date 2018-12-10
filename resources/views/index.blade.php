@@ -54,7 +54,10 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        
+        <li class="active"><a href="/"><i class="fa fa-list"></i> <span>Pothole Detection</span></a>
+        </li>
+        <li><a href="/sensor"><i class="fa fa-line-chart"></i> <span>Read Sensor</span></a>
+        </li>
         </ul>
     </section>
     <!-- /.sidebar -->
@@ -83,6 +86,7 @@
                   <th>Status</th>
                   <th>latitude</th>
                   <th>longitude</th>
+                  <th>time</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -92,6 +96,7 @@
                   <td>{{$data->status}}</td>
                   <td>{{$data->lat}}</td>
                   <td>{{$data->lng}}</td>
+                  <td>{{$data->created_at}}</td>
                 </tr>
                   @endforeach
                 </tbody>
