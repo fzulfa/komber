@@ -22,4 +22,14 @@ class DashboardController extends Controller
 
     	return $datas;
     }
+
+    public function resetsensor(){
+    	$sensor = Sensor::truncate();
+    	return redirect('/sensor');
+    }
+
+    public function resetpothole(){
+    	$pothole = Pothole::truncate();
+    	return redirect('/');
+    }
 }

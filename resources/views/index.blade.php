@@ -58,6 +58,8 @@
         </li>
         <li><a href="/sensor"><i class="fa fa-line-chart"></i> <span>Read Sensor</span></a>
         </li>
+        <li><a href="/resetpothole"><i class="fa fa-window-close-o"></i> <span>Reset Pothole</span></a>
+        </li>
         </ul>
     </section>
     <!-- /.sidebar -->

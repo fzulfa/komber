@@ -58,6 +58,9 @@
         </li>
           <li class="active"><a href="/sensor"><i class="fa fa-line-chart"></i> <span>Read Sensor</span></a>
         </li>
+        </li>
+          <li><a href="/resetsensor"><i class="fa fa-window-close-o"></i> <span>Reset Sensor</span></a>
+        </li>
         </ul>
     </section>
     <!-- /.sidebar -->
@@ -74,41 +77,7 @@
 
     <!-- Main content -->
     <section class="content">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th>No</th>
-                  <th>Acl X</th>
-                  <th>Acl Y</th>
-                  <th>Acl Z</th>
-                  <th>Timestamp</th>
-                </tr>
-                </thead>
-                <tbody>
-                  @foreach ($datas as $data)
-                <tr>
-                  <td>{{$data->id}}</td>
-                  <td>{{$data->Ax}}</td>
-                  <td>{{$data->Ay}}</td>
-                  <td>{{$data->Az}}</td>
-                  <td>{{$data->created_at}}</td>
-                </tr>
-                  @endforeach
-                </tbody>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
+      
       <canvas id="line-chart" width="800" height="450"></canvas>
 
     </section>

@@ -16,3 +16,6 @@ Route::get('/sensor', 'DashboardController@sensor');
 Route::get('/api', 'ApiController@pothole');
 Route::get('/read', 'ApiController@sensor');
 Route::get('/chart', 'DashboardController@chart');
+
+Route::get('/resetsensor', 'DashboardController@resetsensor');
+Route::get('/resetpothole', 'DashboardController@resetpothole');
