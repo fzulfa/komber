@@ -58,6 +58,10 @@
         </li>
           <li class="active"><a href="/sensor"><i class="fa fa-line-chart"></i> <span>Read Sensor</span></a>
         </li>
+        <li><a href="#" onclick="function1()"><i class="fa fa-line-chart"></i> <span>History1</span></a></button>
+        </li>
+        <li><a href="#" onclick="function2()"><i class="fa fa-line-chart"></i> <span>History2</span></a></button>
+        </li>
         </li>
           <li><a href="/resetsensor"><i class="fa fa-window-close-o"></i> <span>Reset Sensor</span></a>
         </li>
@@ -319,7 +323,23 @@
     })
   })
 
-   $.getJSON("/chart", function (result) {
+  sensors = "chart";
+  draw(sensors);
+  
+  function function1() {
+    sensors = "/history/1";
+    draw(sensors);
+  }
+
+  function function2() {
+    sensors = "/history/2";
+    draw(sensors);
+
+  }
+
+  function draw (param){
+
+   $.getJSON(param, function (result) {
 
       var Ax = [], Ay=[], Az=[], Timestamp=[];
       for (var i = 0; i < result.length; i++) {
@@ -329,38 +349,41 @@
           Az.push(result[i].Az);
       }
 
-  new Chart(document.getElementById("line-chart"), {
-  type: 'line',
-  data: {
-    
-    labels: Timestamp,
-    datasets: [{ 
-        data: Ax,
-        label: "Acl X",
-        borderColor: "#3e95cd",
-        fill: false
-      }, { 
-        data: Ay,
-        label: "Acl Y",
-        borderColor: "#8e5ea2",
-        fill: false
-      }, { 
-        data: Az,
-        label: "Acl Z",
-        borderColor: "#3cba9f",
-        fill: false
-      }
-    ]
-  },
 
-  options: {
-    title: {
-      display: true,
-      text: 'Data Accelorometer Sensor'
-    }
-  }
-});
+      new Chart(document.getElementById("line-chart"), {
+        type: 'line',
+        data: {
+          
+          labels: Timestamp,
+          datasets: [{ 
+              data: Ax,
+              label: "Acl X",
+              borderColor: "#3e95cd",
+              fill: false
+            }, { 
+              data: Ay,
+              label: "Acl Y",
+              borderColor: "#8e5ea2",
+              fill: false
+            }, { 
+              data: Az,
+              label: "Acl Z",
+              borderColor: "#3cba9f",
+              fill: false
+            }
+          ]
+        },
+
+        options: {
+          title: {
+            display: true,
+            text: 'Data Accelorometer Sensor'
+          }
+        }
       });
+
+    });
+ };
 
 </script>
 </body>
